@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Return Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="toggle">
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+    <h2>Crypto Return Calculator</h2>
+
+    <label for="crypto">Choose Your Crypto:</label>
+    <select id="crypto"></select>
+
+    <div id="price-display">Live Price: $0.00</div>
+    <div class="row">
+      <button id="refresh">Refresh Price</button>
+      <select id="range">
+        <option value="7">7d</option>
+        <option value="30" selected>30d</option>
+        <option value="90">90d</option>
+        <option value="365">1y</option>
+      </select>
+    </div>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" max="100000000" placeholder="e.g. 100" />
+
+    <label for="years">Time Period of Holding (years):</label>
+    <input type="number" id="years" max="50" placeholder="e.g. 5" />
+
+    <label for="sell-price">Expected Sell Price (USD):</label>
+    <input type="number" id="sell-price" placeholder="e.g. 20" />
+
+    <button onclick="calculateReturn()">Calculate Return</button>
+    <button class="secondary-button" onclick="downloadCSV()">Download as CSV</button>
+
+    <h3 id="result"></h3>
+
+    <canvas id="priceChart" height="100"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

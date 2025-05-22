@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --bg-dark: #050509;
+  --bg-panel: rgba(15, 15, 25, 0.9);
+  --text-primary: #f0f8ff;
+  --text-muted: #7f9cbf;
+  --accent-blue: #00aaff;
+  --accent-green: #00ffcc;
+  --accent-red: #ff4d4d;
+  --accent-orange: #ffb347;
+  --accent-purple: #915EFF;
+  --accent-turquoise: #1AE3D8;
+  --accent-solana: linear-gradient(90deg, #00FFA3, #DC1FFF);
+
+  /* Default variables for dark mode */
+  --bg-color: var(--bg-dark);
+  --panel-bg: var(--bg-panel);
+  --text-color: var(--text-primary);
+  --text-muted-color: var(--text-muted);
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --button-bg: var(--accent-solana);
+  --button-text-color: #000;
+  --box-shadow-color: rgba(0, 255, 255, 0.1);
+  --result-color: var(--accent-red);
+}
+
+body.light-theme {
+  --bg-color: #f0f0f0;
+  --panel-bg: #fff;
+  --text-color: #121212;
+  --text-muted-color: #6b7280;
+  --input-bg: #f7f7f7;
+  --input-border: #ccc;
+  --button-bg: linear-gradient(90deg, #00FFA3, #DC1FFF);
+  --button-text-color: #000;
+  --box-shadow-color: rgba(0, 255, 255, 0.3);
+  --result-color: #b91c1c;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 860px;
+  margin: 60px auto;
+  padding: 2.5rem;
+  background: var(--panel-bg);
+  border-radius: 20px;
+  box-shadow: 0 0 50px var(--box-shadow-color);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  background: var(--accent-solana);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+}
+
+.toggle button {
+  width: 140px;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text-muted-color);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px var(--box-shadow-color);
+}
+
+input, select {
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: 0.2s ease;
+  border: 1px solid var(--input-border);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border: 1px solid var(--accent-turquoise);
+  box-shadow: 0 0 10px var(--accent-turquoise);
+}
+
+input::placeholder {
+  color: #9baec8;
+}
+
+button {
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 20px var(--box-shadow-color);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--box-shadow-color);
+}
+
+#price-display {
+  font-size: 1.2rem;
+  color: var(--accent-green);
+  margin-top: 1rem;
+  text-shadow: 0 0 4px var(--accent-green);
+}
+
+#result {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--result-color);
+  margin-top: 1rem;
+  text-shadow: 0 0 6px var(--result-color);
+}
+
+canvas {
+  margin-top: 3rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
+}
